@@ -1,23 +1,23 @@
-import aluno as a
-import turma as t
+import Student as s
+import Classroom as c
 
-alunos = []
+students = []
 
-for dados in [
-    ("Fabio", "Teixeira", 8),
-    ("Fabiano", "Teixeira", 10),
-    ("Melissa", "Teixeira", -1),
+for data in [
+    ("Luiza", "Fonseca", 8),
+    ("Mariana", "Ferreira", 10),
+    ("Chico", "Assis", -1),
 ]:
     try:
-        aluno = a.Aluno(*dados)
-        alunos.append(aluno)
+        student = s.Student(*data)
+        students.append(student)
     except:
         pass
 
-turmaObject = t.Turma()
-turmaObject.cadastrarAlunos(alunos)
+classroomObject = c.Classroom()
+classroomObject.add_students(alunos)
 
-turmaObject.mostrarAlunos()
+classroomObject.show_students()
 print("*" * 30)
-print("Aluno com menor nota:", turmaObject.menorNota.mostrarAluno())
-print("Aluno com maior nota:", turmaObject.maiorNota.mostrarAluno())
+print("Student with lowest grade:", classroomObject.lowest_grade.show_students())
+print("Student with highest grade:", classroomObject.highest_grade.show_students())
